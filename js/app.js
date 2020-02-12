@@ -32,6 +32,9 @@ guessBtn.addEventListener("click", () => {
     if (guessLeft === 0) {
       gameOver(false, `Game Over, you lost. The correct number was ${winningNum}`);
     } else {
+      if(guessLeft === -1){
+        window.location.reload();
+      }
       guessInput.value = "";
       setMessage(`${guess} is not correct, ${guessLeft} guesses left`, `red`);
     }
